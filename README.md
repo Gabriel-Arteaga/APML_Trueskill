@@ -15,7 +15,17 @@ This repository presents our solution for a project assigned during the Advanced
 3. **Updating Posterior Distribution**: Evidence is collected from the game by observing its outcome. We then update the posterior distribution by combining the probabilities derived from the observed outcome and our prior beliefs of the players' skills.
    
 ## Technical Details
-
+To update our posterior distribution, we employed two distinct techniques:
+1. **Monte Carlo Methods with Assumed Density Filtering:**  
+   This technique involves utilizing Monte Carlo methods, more specifically *Gibbs Sampling*, to approximate the posterior distribution. Specifically, we employed a method known as Assumed Density Filtering (ADF). ADF allows for the approximation of complex posterior distributions by iteratively updating the parameters of simpler distributions until convergence is reached.
+2. **Factor Graphs and Expectation Propagation**  
+   The second technique leveraged factor graphs and the message passing algorithm to perform Expectation Propagation (EP). Factor graphs provide a graphical representation of the probabilistic model, making it easier to understand and manipulate. EP is an iterative algorithm that efficiently updates the beliefs about the variables in the graph based on observed data, allowing for the computation of posterior distributions.
+<p align="center">
+  <img src="/data/images/Screenshot 2024-03-02 201641.png" width="80%" height="400" alt="Naive ensemble method" />
+</p>
+<p align="center">
+<em> Factor graph visualizing the message passing algorithm. </em>
+</p>
 
 ## Application and Results
 
